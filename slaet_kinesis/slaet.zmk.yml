@@ -1,0 +1,12 @@
+file_format: "1"
+id: slaet_kinesis
+name: Slaet-Kinesis
+type: shield
+url: 
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+siblings:
+  - slaet_left
+  - slaet_right
