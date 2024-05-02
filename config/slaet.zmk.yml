@@ -1,6 +1,6 @@
 file_format: "1"
-id: slaet_kinesis
-name: Slaet-Kinesis
+id: slaet
+name: Slaet
 type: shield
 url: 
 requires: [pro_micro]

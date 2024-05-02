@@ -1,17 +1,17 @@
 # Copyright (c) 2024 Slaet Reteals
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SLAET-KINESIS_LEFT
+if SHIELD_SLAET_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "slaet-kinesis"
+    default "slaet"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_SLAET-KINESIS_LEFT || SHIELD_SLAET-KINESIS_RIGHT
+if SHIELD_SLAET_LEFT || SHIELD_SLAET_RIGHT
 
 config ZMK_SPLIT
     default y
