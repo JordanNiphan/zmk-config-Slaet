@@ -4,13 +4,11 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-#define BASE 0
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 // | ESC  | 1    | 2    | 3     | 4     | 5    | Null |                                           | Null | 6    | 7    | 8    | 9    | 0    | -    |
 // | TAB  | Q    | W    | F     | P     | B    | Null |                                           | Null | L    | U    | Y    | :    | |    | Null |

@@ -8,4 +8,5 @@ manifest:
       revision: main
       import: app/west.yml
   self:
+    west-commands: scripts/west-commands.yml
     path: config

@@ -4,7 +4,7 @@ name: Slaet
 type: shield
 url: 
 requires: [pro_micro]
-exposes: [i2c_oled]
+exposes:
 features:
   - keys
 siblings:
