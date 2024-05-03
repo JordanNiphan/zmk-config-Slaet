@@ -67,7 +67,7 @@
             bindings = <&mkp LCLK>;
         };
         combo_rclk {
-            timeoutf-ms = <50>;
+            timeout-ms = <50>;
             key-positions = <34 35>;
             bindings = <&mkp RCLK>;
         };
