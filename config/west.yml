@@ -6,6 +6,6 @@ manifest:
     - name: SlaetZmk
       remote: zmkfirmware
       revision: main
-      import: app/west.yml
+      import: SlaetZmk/app/west.yml
   self:
     path: config
