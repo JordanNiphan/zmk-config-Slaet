@@ -6,8 +6,7 @@
 #define DEFAULT      0
 #define NUMLAYER     1
 #define NAVLAYER     2
-#define MOUSELAYER   3
-#define QWERTY       4
+#define QWERTY       3
 
 /*
 80 KEY MATRIX / LAYOUT MAPPING
@@ -32,6 +31,11 @@
 / {
     combos {
         compatible = "zmk,combos";
+        combo_default {
+            timeout-ms = <50>;
+            key-positions = <75 76>;
+            bindings = <&to DEFAULT>;
+        };        
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
@@ -63,7 +67,7 @@
             bindings = <&mkp LCLK>;
         };
         combo_rclk {
-            timeout-ms = <50>;
+            timeoutf-ms = <50>;
             key-positions = <34 35>;
             bindings = <&mkp RCLK>;
         };
@@ -75,7 +79,7 @@
         combo_qwerty {
             timeout-ms = <50>;
             key-positions = <9 10 11>;
-            bindings = <&kp DEL>;
+            bindings = <&to QWERTY>;
         };
     };
 };
@@ -89,8 +93,8 @@ Transparent Layer Template
                 bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans              &trans      &trans              &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans      &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &trans &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                      &trans      &trans                      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans      &trans  &trans   &trans             &trans  &trans  &trans  &trans  &trans
                 >;
         };
@@ -103,11 +107,11 @@ Transparent Layer Template
         compatible = "zmk,keymap";
 
             bindings = <
-&kp ESC &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6                                                              &none   &kp N6  &kp N7  &kp N8      &kp N9             &kp N0      &kp MINUS
-&kp TAB &kp Q   &kp W   &kp F   &kp P   &kp B   &kp N7                                                              &none   &kp J   &kp L   &kp U       &kp Y              &kp SEMI    &none
-&none   &kp A   &kp R   &kp S   &kp T   &kp G   &kp N8                  &kp N9                      &none           &none   &kp M   &kp N   &kp E       &lt NAVLAYER I     &kp O       &none
-&none   &kp Z   &kp X   &kp C   &kp D   &kp V               &kp N3      &kp N1                      &none   &none           &kp K   &kp H   &kp COMMA   &kp DOT            &kp FSLH    &none
-&none   &none   &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE   &sk LSHIFT         &none   &none   &none           &none   &none       &none              &none       &none
+&kp ESC &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6                                                                              &none   &kp N6  &kp N7  &kp N8      &kp N9          &kp N0      &kp MINUS
+&kp TAB &kp Q   &kp W   &kp F   &kp P   &kp B   &kp N7                                                                              &none   &kp J   &kp L   &kp U       &kp Y           &kp SEMI    &none
+&none   &kp A   &kp R   &kp S   &kp T   &kp G   &kp N8                      &kp N3  &kp LEFT_GUI            &none   &none           &none   &kp M   &kp N   &kp E       &lt NAVLAYER I  &kp O       &none
+&none   &kp Z   &kp X   &kp C   &kp D   &kp V                                       &kp N1                  &none                           &kp K   &kp H   &kp COMMA   &kp DOT         &kp FSLH    &none
+&none   &none   &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE      &sk LSHIFT              &none       &none   &none               &none   &none       &none           &none       &none
             >;
 
         };
@@ -115,13 +119,36 @@ Transparent Layer Template
         NUMLAYER {
 
                 bindings = <
-&trans  &trans      &trans      &trans      &trans      &trans      &trans                                          &trans  &trans  &trans  &trans  &trans      &trans          &tran
-&trans  &kp EXCL    &kp AT      &kp LBRC    &kp RBRC    &PIPE2      &trans                                          &trans  &trans  &kp N7  &kp N8  &kp N9      &kp ASTRK       &kp EQUAL
-&trans  &kp HASH    &kp DLLR    &kp LPAR    &kp RPAR    &kp DOT     &trans          &trans      &trans              &trans  &trans  &kp N4  &kp N5  &kp N6      &kp PLUS        &kp MINUS
-&trans  &kp FSLH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE2          &trans  &trans      &trans  &trans              &trans  &kp N1  &kp N2  &kp N3      &kp KP_DIVIDE   &kp AMPS
-&trans  &trans      &trans      &trans      &trans                  &trans  &trans  &trans      &trans  &trans   &trans             &kp N0  &kp N0  &kp DOT     &trans          &trans
+&trans  &trans      &trans      &trans      &trans      &trans      &trans                                              &trans  &trans  &trans  &trans  &trans      &trans          &tran
+&trans  &kp EXCL    &kp AT      &kp LBRC    &kp RBRC    &PIPE2      &trans                                              &trans  &trans  &kp N7  &kp N8  &kp N9      &kp ASTRK       &kp EQUAL
+&trans  &kp HASH    &kp DLLR    &kp LPAR    &kp RPAR    &kp DOT     &trans      &trans  &trans      &trans &trans       &trans  &trans  &kp N4  &kp N5  &kp N6      &kp PLUS        &kp MINUS
+&trans  &kp FSLH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE2                      &trans      &trans                      &trans  &kp N1  &kp N2  &kp N3      &kp KP_DIVIDE   &kp AMPS
+&trans  &trans      &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans  &trans          &kp N0  &kp N0  &kp DOT     &trans          &trans
                 >;
         };
+
+        NAVLAYER {
+
+                bindings = <
+&trans  &trans  &trans      &trans      &trans      &trans  &bootloader                                                 &bootloader &trans  &trans          &trans          &trans          &trans          &bt BT_CLR
+&trans  &trans  &kp PG_DN   &kp UP      &kp PG_UP   &trans  &trans                                                      &trans      &trans  &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &kp LEFT    &kp DOWN    &kp RIGHT   &trans  &trans          &trans  &trans      &trans  &trans          &trans      &trans  &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans      &trans      &trans      &trans                          &trans      &trans                              &trans  &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans   &trans                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &trans
+                >;
+        };
+        
+        QWERTY {
+
+                bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans      &trans          &trans      &trans
+&trans  &kp Q   &kp W   &kp E   &kp R   &kp T   &trans                                                              &trans  &kp Y   &kp U   &kp I       &kp O           &kp P       &trans
+&trans  &kp A   &kp S   &kp D   &kp F   &kp G   &trans          &trans  &trans          &trans  &trans              &trans  &kp H   &kp J   &kp K       &lt NAVLAYER L  &kp SEMI    &trans
+&trans  &kp Z   &kp X   &kp C   &kp V   &kp B                           &trans          &trans                              &kp N   &kp M   &kp COMMA   &kp DOT         &kp FSLH    &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans      &trans          &trans      &trans   &trans                 &trans  &trans      &trans          &trans      &trans
+                >;
+        };
+
 };
 
 
