@@ -121,7 +121,7 @@ Transparent Layer Template
 
                 bindings = <
 &trans  &trans      &trans      &trans      &trans      &trans      &trans                                              &trans  &trans  &trans  &trans  &trans      &trans          &tran
-&trans  &kp EXCL    &kp AT      &kp LBRC    &kp RBRC    &PIPE2      &trans                                              &trans  &trans  &kp N7  &kp N8  &kp N9      &kp ASTRK       &kp EQUAL
+&trans  &kp EXCL    &kp AT      &kp LBRC    &kp RBRC    &kp PIPE2   &trans                                              &trans  &trans  &kp N7  &kp N8  &kp N9      &kp ASTRK       &kp EQUAL
 &trans  &kp HASH    &kp DLLR    &kp LPAR    &kp RPAR    &kp DOT     &trans      &trans  &trans      &trans &trans       &trans  &trans  &kp N4  &kp N5  &kp N6      &kp PLUS        &kp MINUS
 &trans  &kp FSLH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE2                      &trans      &trans                      &trans  &kp N1  &kp N2  &kp N3      &kp KP_DIVIDE   &kp AMPS
 &trans  &trans      &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans  &trans          &kp N0  &kp N0  &kp DOT     &trans          &trans
@@ -146,7 +146,7 @@ Transparent Layer Template
 &trans  &kp Q   &kp W   &kp E   &kp R   &kp T   &trans                                                              &trans  &kp Y   &kp U   &kp I       &kp O           &kp P       &trans
 &trans  &kp A   &kp S   &kp D   &kp F   &kp G   &trans          &trans  &trans          &trans  &trans              &trans  &kp H   &kp J   &kp K       &lt NAVLAYER L  &kp SEMI    &trans
 &trans  &kp Z   &kp X   &kp C   &kp V   &kp B                           &trans          &trans                              &kp N   &kp M   &kp COMMA   &kp DOT         &kp FSLH    &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans      &trans          &trans      &trans   &trans                 &trans  &trans      &trans          &trans      &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans      &trans          &trans      &trans  &trans                  &trans  &trans      &trans          &trans      &trans
                 >;
         };
     };
