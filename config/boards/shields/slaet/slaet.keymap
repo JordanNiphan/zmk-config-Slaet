@@ -6,7 +6,7 @@
 #define DEFAULT      0
 #define NUMLAYER     1
 #define NAVLAYER     2
-#define QWERTY       3
+#define QWERTY       3 Amphet/Vextr E 30mg cap Acta 24hr release (extended release)
 
 /*
 
@@ -147,11 +147,11 @@ Transparent Layer Template
         default_layer {
 
             bindings = <
-&kp ESC &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6                                                                              &none   &kp N6  &kp N7  &kp N8      &kp N9          &kp N0      &kp MINUS
-&kp TAB &kp Q   &kp W   &kp F   &kp P   &kp B   &kp N7                                                                              &none   &kp J   &kp L   &kp U       &kp Y           &kp SEMI    &none
-&none   &kp A   &kp R   &kp S   &kp T   &kp G   &kp N8                      &kp N3  &kp LEFT_GUI            &none   &none           &none   &kp M   &kp N   &kp E       &lt NAVLAYER I  &kp O       &none
-&none   &kp Z   &kp X   &kp C   &kp D   &kp V                                       &kp N1                  &none                           &kp K   &kp H   &kp COMMA   &kp DOT         &kp FSLH    &none
-&none   &none   &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE      &sk LSHIFT              &none       &none   &none               &none   &none       &none           &none       &none
+&kp ESC  &kp N1     &kp N2  &kp N3  &kp N4  &kp N5  &kp N6                                                                              &none   &kp N6  &kp N7  &kp N8      &kp N9          &kp N0      &kp MINUS
+&kp TAB  &kp Q      &kp W   &kp F   &kp P   &kp B   &kp N7                                                                              &none   &kp J   &kp L   &kp U       &kp Y           &kp SEMI    &none
+&kp N1   &kp A      &kp R   &kp S   &kp T   &kp G   &kp N8                      &kp N3  &kp LEFT_GUI            &none   &none           &none   &kp M   &kp N   &kp E       &lt NAVLAYER I  &kp O       &none
+&kp N2   &kp Z      &kp X   &kp C   &kp D   &kp V                                       &kp N1                  &none                           &kp K   &kp H   &kp COMMA   &kp DOT         &kp FSLH    &none
+&kp N3   &kp N4     &kp N5  &kp N6  &kp N7           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none       &none   &none               &none   &none       &none           &none       &none
             >;
 
         };
@@ -163,7 +163,7 @@ Transparent Layer Template
 &trans  &kp EXCL    &kp AT      &kp LBRC    &kp RBRC    &kp PIPE2   &trans                                              &trans  &trans  &kp N7  &kp N8  &kp N9      &kp ASTRK       &kp EQUAL
 &trans  &kp HASH    &kp DLLR    &kp LPAR    &kp RPAR    &kp DOT     &trans      &trans  &trans      &trans &trans       &trans  &trans  &kp N4  &kp N5  &kp N6      &kp PLUS        &kp MINUS
 &trans  &kp FSLH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE2                      &trans      &trans                      &trans  &kp N1  &kp N2  &kp N3      &kp KP_DIVIDE   &kp AMPS
-&trans  &trans      &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans  &trans          &kp N0  &kp N0  &kp DOT     &trans          &trans
+&bootloader  &trans      &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans  &trans          &kp N0  &kp N0  &kp DOT     &trans          &trans
                 >;
         };
 
