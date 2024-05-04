@@ -1,6 +1,6 @@
 file_format: "1"
 id: slaet
-name: Slaet
+name: Slaet-Reteals
 type: shield
 url: 
 requires: [pro_micro]
