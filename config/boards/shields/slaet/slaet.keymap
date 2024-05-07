@@ -131,7 +131,7 @@
         };
         combo_bttog {
             timeout-ms = <50>;
-            key-positions = <36 52 67>
+            key-positions = <36 52 67>;
             bindings = <&out OUT_TOG>;            
         };
     };
