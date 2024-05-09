@@ -10,7 +10,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define QWERTY       3
-#defind MOUSELAYER   4
+#define MOUSELAYER   4
 
 /*
                                     .=*@@*=.                                                                                           
