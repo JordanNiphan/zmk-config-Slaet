@@ -1,0 +1,205 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT      0
+#define NUMLAYER     1
+#define NAVLAYER     2
+#define QWERTY       3
+
+/*
+                                    .=*@@*=.                                                                                           
+                                :=*@#=    =#@*=:                                     
+                            .-+#@#+:        :+#@#+-.                                
+                        .-+#@%*=.              .=*%@#+-.                           
+                   .-=*#@%*=:                      :=*#@%*=-.                     
+            .:-=+*#%@%#+=:                              :=+#%@%#*+=-:.            
+.:-=+**#%@@@%#*+=:.                                            .:=+*#%@@@%#**+=-:.
+@@@%##*+=-::.                                                            .::-=+*##%@@@
+@@=                                                                                =@@
+@@+                                                                                +@@
+%@+                                                                                +@%
+#@*                                                                                *@#
++@%                                                                                %@+
+-@@                                                                                @@-
+:@@.                                                                              .@@:
+.@@:                                                                              :@@.
+-@@                  @@@@@@   @@@        @@@@@@   @@@@@@@@ @@@@@@@                 @@-
+.@@:                @@@@@@@   @@@       @@@@@@@@  @@@@@@@@ @@@@@@@                :@@.                         
+.@@:                !@@       @@!       @@!  @@@  @@!        @@!                  :@@. 
+ .@@:               !@!       !@!       !@!  @!@  !@!        !@!                 :@@. 
+ .@@.               !!@@!!    @!!       @!@!@!@!  @!!!:!     @!!                 .@@.  
+ .@@:                !!@!!!   !!!       !!!@!!!!  !!!!!:     !!!                 :@@.
+ .@@:                    !:!  !!:       !!:  !!!  !!:        !!:                 :@@.
+ .@@.               :::: ::    :: ::::  ::   :::   :: ::::    ::                 .@@.
+  -@@               :: : :    : :: : :   :   : :  : :: ::     :                  @@- 
+   -@@-                                                                        -@@-         
+    :@@+                                                                      +@@:           
+      %@#                                                                    #@%            
+       %@%.                                                                .%@%             
+        *@@=                                                              =@@*               
+         =@@#:                                                          :#@@=                   
+          .*@@#:                                                      :#@@*.                    
+            .*@@#:                                                  :#@@*.                      
+              :#@@%-                                             -%@@#:                        
+               :*@@%=                                           =%@@*:                          
+                  .+@@@*:                                   :*@@@+.                            
+                      =%@@%=                             =%@@%=                               
+                         :*@@#=.                    .=#@@#*:                                 
+                            .=#@@@%-            -%@@@#=.                                   
+                                 -#@@@-      -@@@#-         
+                                      -+=@@=+-
+
+                                        
+80 KEY MATRIX / LAYOUT MAPPING
+(Unused numbers marked with *)
+  ╭────────────────────────────────────────┬───────────────────────────────────────╮
+  │  0   1   2   3   4   5   6             |             7   8   9  10  11  12  13 │
+  │ 14  15  16  17  18  19  20             │            21  22  23  24  25  26  27 │
+  │ 28  29  30  31  32  33  34    35  36   │ 37  38     39  40  41  42  43  44  45 │
+  │ 46  47  48  49  50  51            52   │ 53             54  55  56  57  58  59 │
+  │ 60  61  62  63  64        65  66  67   │ 68  69  70         71  72  73  74  75 │
+  ╰────────────────────────────────────────┻───────────────────────────────────────╯
+
+*/
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_default {
+            timeout-ms = <50>;
+            key-positions = <46 60>;
+            bindings = <&to DEFAULT>;
+        };        
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+        combo_ent {
+            timeout-ms = <50>;
+            key-positions = <55 56>;
+            bindings = <&kp RET>;
+        };
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <41 42>;
+            bindings = <&kp BSPC>;
+        };
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp TAB>;
+        };
+        combo_quote {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&kp SQT>;
+        };
+        combo_lclk {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&mkp LCLK>;
+        };
+        combo_rclk {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&mkp RCLK>;
+        };
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <49 50>;
+            bindings = <&kp DEL>;
+        };
+        combo_qwerty {
+            timeout-ms = <50>;
+            key-positions = <11 12 13>;
+            bindings = <&to QWERTY>;
+        };    
+        combo_btclrall {
+            timeout-ms = <50>;
+            key-positions = <0 14 28>;
+            bindings = <&bt BT_CLR_ALL>;            
+        };
+        combo_bttog {
+            timeout-ms = <50>;
+            key-positions = <36 52 67>;
+            bindings = <&out OUT_TOG>;            
+        };
+    };
+};
+
+/*
+Transparent Layer Template
+--------------------------
+
+        TRANSLAYER {
+
+                bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &trans &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                      &trans      &trans                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans      &trans  &trans   &trans             &trans  &trans  &trans  &trans  &trans
+                >;
+        };
+*/
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+
+            bindings = <
+&kp ESC  &kp N1     &kp N2  &kp N3  &kp N4  &kp N5  &kp N6                                                                                              &kp PG_UP   &mkp MCLK  &mkp RCLK     &kp N8      &kp N9          &kp N0      &kp MINUS
+&kp TAB  &kp Q      &kp W   &kp F   &kp P   &kp B   &kp N7                                                                                              &mkp LCLK   &kp J      &kp L        &kp U       &kp Y           &kp SEMI    &kp BSLH
+&none    &kp A      &kp R   &kp S   &kp T   &kp G   &kp N8      &kp N3                 &kp LEFT_GUI            &kp LA(LC(DEL))   &none           &kp PG_DN   &kp M      &kp N        &kp E       &lt NAVLAYER I  &kp O       &none
+&none    &kp Z      &kp X   &kp C   &kp D   &kp V                                      &kp N1                  &none                                                &kp K      &kp H        &kp COMMA   &kp DOT         &kp FSLH    &none
+&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none // reset //                    &lt NUMLAYER SPACE  &none              &kp LALT     &none       &none           &none       &none
+            >;
+
+        };
+
+        NUMLAYER {
+
+                bindings = <
+&trans       &trans      &trans      &trans      &trans      &trans      &trans                                              &trans  &trans  &trans  &trans  &trans      &trans          &trans
+&trans       &kp EXCL    &kp AT      &kp LBRC    &kp RBRC    &kp PIPE2   &trans                                              &trans  &trans  &kp N7  &kp N8  &kp N9      &kp ASTRK       &kp EQUAL
+&trans       &kp HASH    &kp DLLR    &kp LPAR    &kp RPAR    &kp DOT     &trans      &trans  &trans      &trans &trans       &trans  &trans  &kp N4  &kp N5  &kp N6      &kp PLUS        &kp MINUS
+&trans       &kp FSLH    &kp CARET   &kp LBKT    &kp RBKT    &kp TILDE2                      &trans      &trans                      &trans  &kp N1  &kp N2  &kp N3      &kp KP_DIVIDE   &kp AMPS
+&bootloader  &trans      &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans  &trans          &kp N0  &kp N0  &kp DOT     &trans          &bootloader
+                >;
+        };
+
+        NAVLAYER {
+
+                bindings = <
+&trans  &trans  &trans      &trans      &trans      &trans  &bootloader                                                 &bootloader &trans  &trans          &trans          &trans          &trans          &bt BT_CLR
+&trans  &trans  &kp PG_DN   &kp UP      &kp PG_UP   &trans  &trans                                                      &trans      &trans  &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &kp LEFT    &kp DOWN    &kp RIGHT   &trans  &trans          &trans  &trans      &trans  &trans          &trans      &trans  &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans      &trans      &trans      &trans                          &trans      &trans                              &trans  &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans      &trans      &trans                  &trans  &trans      &trans      &trans      &trans   &trans                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &trans
+                >;
+        };
+        
+        QWERTY {
+
+                bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                              &trans  &trans  &trans  &trans      &trans          &trans      &trans
+&trans  &kp Q   &kp W   &kp E   &kp R   &kp T   &trans                                                              &trans  &kp Y   &kp U   &kp I       &kp O           &kp P       &trans
+&trans  &kp A   &kp S   &kp D   &kp F   &kp G   &trans          &trans  &trans          &trans  &trans              &trans  &kp H   &kp J   &kp K       &lt NAVLAYER L  &kp SEMI    &trans
+&trans  &kp Z   &kp X   &kp C   &kp V   &kp B                           &trans          &trans                              &kp N   &kp M   &kp COMMA   &kp DOT         &kp FSLH    &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans      &trans          &trans      &trans  &trans                  &trans  &trans      &trans          &trans      &trans
+                >;
+        };
+    };
+};
+
+
+
+
+
+
