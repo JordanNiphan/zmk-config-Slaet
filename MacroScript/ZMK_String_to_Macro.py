@@ -54,6 +54,8 @@ def Macro(MacroName,Macro):
                 macro += '>\r                , <&macro_release &kp LSHFT>\r                , <&macro_tap &kp '
                 if i.islower():
                     macro += i.upper()
+                elif i.isnumeric():
+                    macro += 'N'+i
                 elif i == ' ':
                     macro += 'SPACE'
                 elif i == '!':
@@ -122,7 +124,10 @@ def Macro(MacroName,Macro):
                     macro += '<&macro_press &kp LSHFT> '+ '\r                , <&macro_tap &kp '+i
                     previous_letter_capital = True
                     firstrun = False
-                else:
+                elif i.isnumeric():
+                    macro += 'N'+i
+                    previous_letter_capital = False
+                elif i.islower():
                     macro += '<&macro_tap &kp '+i.upper()
                     previous_letter_capital = False
                     firstrun = False
@@ -191,6 +196,9 @@ def Macro(MacroName,Macro):
             elif i.isupper() == True:
                 macro += '>\r                , <&macro_press &kp LSHFT> '+'\r                , <&macro_tap &kp '+i
                 previous_letter_capital = True
+            elif i.isnumeric():
+                macro += ' &kp N'+i
+                previous_letter_capital = False
             else:
                 macro += ' &kp '+i.upper()
                 previous_letter_capital = False
