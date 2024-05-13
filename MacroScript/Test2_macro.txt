@@ -1,0 +1,1 @@
+        //keybinding is <&Test2>        Test2: Test2 {            compatible = "zmk,behavior-macro";            #binding-cells = <0>;            bindings                = <&macro_tap &kp 1 &kp 2 &kp 3 &kp 4 &kp 5 &kp 6 &kp 7 &kp 8 &kp 9 &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp BSLH>                ;            };

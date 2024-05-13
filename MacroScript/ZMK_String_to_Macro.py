@@ -5,10 +5,39 @@ Python program to convert a single line string into ZMK macro format.
 Outputs a txt file: (MacroName)_macro.txt
     Duplicate filenames are overwritten.
 
+Optionally combines all *._macro.txt files, in the current directory, into Combined_Macro_File.txt
+
 """
 
+import os
+
+def MacroFilesCombine():
+    MacroFiles = []
+    files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    for f in files:
+        if 'Combined_Macro_File.txt' in f:
+            print('Combined file detected and will be overwritten')
+            cont = input('Continue? (Y/n) :')
+            if cont.upper() != 'Y':
+                print('Stopping')
+                exit()
+
+    for f in files:
+        if '_macro.txt' in f:
+            MacroFiles.append(f)
+    if len(MacroFiles) > 0:
+        print('Combining')
+        print(MacroFiles)
+        print(os.getcwd()+'\\Combined_Macro_File.txt')
+        f = open('Combined_Macro_File.txt', 'w')
+        for l in MacroFiles:
+            x = open(l,'r')
+            f.write(x.read())
+            x.close()
+        f.close()
 def Macro(MacroName,Macro):
 
+    MacroFileName = MacroName+'_macro.txt'
     string = Macro
     macro =  '        //keybinding is <&'+MacroName+'>\r        '+MacroName+': '+MacroName+' {\r            compatible = "zmk,behavior-macro";\r            #binding-cells = <0>;\r            bindings\r                = '
 
@@ -22,7 +51,7 @@ def Macro(MacroName,Macro):
                 previous_letter_capital = True
             else:
                 previous_letter_capital = False
-                macro += '>\r                , <&macro_release &kp LSHFT>\r                , <&kp '
+                macro += '>\r                , <&macro_release &kp LSHFT>\r                , <&macro_tap &kp '
                 if i.islower():
                     macro += i.upper()
                 elif i == ' ':
@@ -167,7 +196,7 @@ def Macro(MacroName,Macro):
                 previous_letter_capital = False
     if string[-1].isupper() == True:
         macro += '>\r                , <&macro_release &kp LSHFT'
-    macro += '>\r                ;\r            };'
+    macro += '>\r                ;\r            };\r'
     
     print('Creating a file for string:')
     print(string)
@@ -176,16 +205,12 @@ def Macro(MacroName,Macro):
     f.write(macro)
     f.close()
 
-
-
-if __name__ == '__main__':
-
+    return(MacroFileName)
+def StringToMacro():
+    files = []
     special_characters = '!@#$%^&*()-+?=,<>/\\\"\''
-
-
     work_counter = 0
     annoy_counter = 0
-    
     while True:
         if work_counter == 0:
             print('Ready to work.')
@@ -233,20 +258,21 @@ if __name__ == '__main__':
                 work_counter -= 1
             continue
 
-        Macro(M,N)
-        another = input('Another? (Y/n):')
+        
+        files.append(Macro(M,N))
+        another = input('Create another Macro? (Y/n):')
         if another.upper() == 'Y':
             pass
         elif another.upper() == 'N':
             print('OK!')
-            exit()
+            break
         else:
             while True:
                 if another.upper() == 'Y':
                     break
                 elif another.upper() == 'N':
                     print('FINE!')
-                    exit()
+                    break
                 if annoy_counter == 0:
                     another = input("Whaaat? ... input Y or N ... :")
                     annoy_counter += 1
@@ -262,3 +288,15 @@ if __name__ == '__main__':
                 elif annoy_counter == 4:
                     print("Kill 'em! ...progam exit...")
                     exit()
+
+if __name__ == '__main__':
+    
+    StringToMacro()
+    print('Current Directory: '+os.getcwd())
+    combine = input('Create Combined Macros File of current Directory? (Y/n) :')
+    
+    if combine.upper() != 'Y':
+        exit()
+    
+    else:
+        MacroFilesCombine()
