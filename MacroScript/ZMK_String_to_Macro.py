@@ -2,6 +2,8 @@
 
 Python program to convert a single line string into ZMK macro format.
 
+MacroName is converted to lowercas as... keymap is case sensitive #rip
+
 Outputs a txt file: (MacroName)_macro.txt
     Duplicate filenames are overwritten.
 
@@ -36,7 +38,7 @@ def MacroFilesCombine():
             x.close()
         f.close()
 def Macro(MacroName,Macro):
-
+    MacroName = MacroName.lower()
     MacroFileName = MacroName+'_macro.txt'
     string = Macro
     macro =  '        //keybinding is <&'+MacroName+'>\r        '+MacroName+': '+MacroName+' {\r            compatible = "zmk,behavior-macro";\r            #binding-cells = <0>;\r            bindings\r                = '
