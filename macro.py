@@ -91,7 +91,7 @@ def Macro(MacroName,Macro):
                     previous_letter_capital = True
                     firstrun = False
                 else:
-                    macro += '<&macro_tap &kp '+i
+                    macro += '<&macro_tap &kp '+i.upper()
                     previous_letter_capital = False
                     firstrun = False
             elif i == ' ':
@@ -160,11 +160,11 @@ def Macro(MacroName,Macro):
                 macro += '>\r                , <&macro_press &kp LSHFT> '+'\r                , <&macro_tap &kp '+i
                 previous_letter_capital = True
             else:
-                macro += ' &kp '+i
+                macro += ' &kp '+i.upper()
                 previous_letter_capital = False
     if string[-1].isupper() == True:
         macro += '>\r                , <&macro_release &kp LSHFT'
-    macro += '>\r                ;\r        }; #keybinding is <&'+MacroName+'>'
+    macro += '>\r                ;\r        }; \r//keybinding is <&'+MacroName+'>'
 
         
     f = open(MacroName+"_macro.txt", "w")
