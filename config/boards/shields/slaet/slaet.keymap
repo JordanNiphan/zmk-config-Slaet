@@ -197,7 +197,7 @@ Transparent Layer Template
 &kp TAB  &kp Q      &kp W   &kp F   &kp P   &kp B   &kp N7                                                                                       &mkp LCLK   &kp J      &kp L        &kp U              &kp Y           &kp SEMI    &kp BSLH
 &none    &kp A      &kp R   &kp S   &kp T   &kp G   &kp N8      &kp N3                 &kp LEFT_GUI            &kp LA(LC(DEL))   &mmv MOVE_UP           &kp PG_DN   &kp M      &kp N        &lt MOUSELAYER E   &lt NAVLAYER I  &kp O       &none
 &none    &kp Z      &kp X   &kp C   &kp D   &kp V                                      &kp N1                  &mmv MOVE_LEFT                                         &kp K      &kp H        &kp COMMA          &kp DOT         &kp FSLH    &none
-&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &FakeLastTest_123              &Slaet_Test_Macro           &&Test1      &Test2
+&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &FakeLastTest_123              &Slaet_Test_Macro           &Test1      &Test2
             >;
 
         };
