@@ -164,7 +164,7 @@ def Macro(MacroName,Macro):
                 previous_letter_capital = False
     if string[-1].isupper() == True:
         macro += '>\r                , <&macro_release &kp LSHFT'
-    macro += '>\r                ;\r        }; \r//keybinding is <&'+MacroName+'>'
+    macro += '>\r                ;\r        }; \r        //keybinding is <&'+MacroName+'>'
 
         
     f = open(MacroName+"_macro.txt", "w")
