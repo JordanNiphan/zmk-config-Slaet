@@ -24,7 +24,7 @@ def Macro(MacroName,Macro):
                 previous_letter_capital = False
                 macro += '>\r                , <&macro_release &kp LSHFT>\r                , <&kp '
                 if i.islower():
-                    macro += i
+                    macro += i.upper()
                 elif i == ' ':
                     macro += 'SPACE'
                 elif i == '!':
@@ -167,10 +167,12 @@ def Macro(MacroName,Macro):
                 previous_letter_capital = False
     if string[-1].isupper() == True:
         macro += '>\r                , <&macro_release &kp LSHFT'
-    macro += '>\r                ;\r        };'
+    macro += '>\r                ;\r            };'
     
-    
-    f = open(MacroName+"_macro.txt", "w")
+    print('Creating a file for string:')
+    print(string)
+    print('Filename: '+MacroName+'_macro.txt')
+    f = open(MacroName+'_macro.txt', 'w')
     f.write(macro)
     f.close()
 
@@ -178,7 +180,7 @@ def Macro(MacroName,Macro):
 
 if __name__ == '__main__':
 
-    special_characters = "!@#$%^&*()-+?=,<>/\\\"\'"
+    special_characters = '!@#$%^&*()-+?=,<>/\\\"\''
 
 
     work_counter = 0

@@ -76,33 +76,29 @@
                 = <&macro_press &kp LSHFT> 
                 , <&macro_tap &kp F>
                 , <&macro_release &kp LSHFT>
-                , <&kp i &kp R &kp S &kp T>
+                , <&kp A &kp K &kp E &kp SPACE>
                 , <&macro_press &kp LSHFT> 
                 , <&macro_tap &kp F>
                 , <&macro_release &kp LSHFT>
-                , <&kp a &kp K &kp E &kp SPACE>
+                , <&kp I &kp R &kp S &kp T &kp N &kp A &kp M &kp E &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LSHFT>
+                , <&kp A &kp K &kp E &kp SPACE>
                 , <&macro_press &kp LSHFT> 
                 , <&macro_tap &kp L>
                 , <&macro_release &kp LSHFT>
-                , <&kp a &kp S &kp T>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp F>
-                , <&macro_release &kp LSHFT>
-                , <&kp a &kp K &kp E &kp SPACE>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&kp e &kp S &kp T &kp 1 &kp 2 &kp 3 &kp EXCL &kp AT &kp HASH>
+                , <&kp A &kp S &kp T &kp N &kp A &kp M &kp E>
                 ;
-        };
+            };
         //keybinding is <&FakeEmail>
         FakeEmail: FakeEmail {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp F &kp A &kp K &kp E &kp F &kp I &kp R &kp S &kp T &kp DOT &kp F &kp A &kp K &kp E &kp L &kp A &kp S &kp T &kp AT &kp Y &kp A &kp H &kp O &kp O &kp DOT &kp C &kp O &kp M>
+                = <&macro_tap &kp F &kp A &kp K &kp E &kp E &kp M &kp A &kp I &kp L &kp AT &kp Y &kp A &kp H &kp O &kp O &kp DOT &kp C &kp O &kp M>
                 ;
-        };
+            };
         //keybinding is <&Macro_Name_1>
         Macro_Name_1: Macro_Name_1 {
             compatible = "zmk,behavior-macro";
@@ -111,16 +107,24 @@
                 = <&macro_press &kp LSHFT> 
                 , <&macro_tap &kp T>
                 , <&macro_release &kp LSHFT>
-                , <&kp e &kp S &kp T &kp SPACE>
+                , <&kp E &kp S &kp T &kp I &kp N &kp G &kp SPACE &kp 1 &kp 2 &kp 3 &kp EXCL &kp AT &kp HASH &kp SPACE>
                 , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp M>
+                , <&macro_tap &kp A>
                 , <&macro_release &kp LSHFT>
-                , <&kp a &kp C &kp R &kp O &kp SPACE &kp 1 &kp SPACE &kp O &kp R &kp SPACE &kp 2 &kp SPACE &kp FSLH &kp FSLH &kp SPACE &kp BSLH &kp BSLH &kp SPACE>
+                , <&kp L &kp L &kp SPACE>
                 , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp S>
+                , <&macro_tap &kp T>
                 , <&macro_release &kp LSHFT>
-                , <&kp e &kp E &kp M &kp S &kp SPACE &kp STAR &kp STAR &kp SPACE &kp O &kp P &kp E &kp R &kp A &kp B &kp L &kp E &kp DOT>
+                , <&kp H &kp E &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp T>
+                , <&macro_release &kp LSHFT>
+                , <&kp H &kp I &kp N &kp G &kp Z &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
                 ;
+            };
         };
         
     };
