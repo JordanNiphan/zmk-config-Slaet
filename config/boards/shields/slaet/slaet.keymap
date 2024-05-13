@@ -68,14 +68,61 @@
 
 / {
     macros {
-        fake: fake {
+        //keybinding is <&Fake_Name>
+        Fake_Name: Fake_Name {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp F &kp A &kp K &kp E &kp DOT &kp E &kp M &kp A &kp I &kp L &kp AT &kp Y &kp A &kp H &kp O &kp O &kp DOT &kp C &kp O &kp M>
+                = <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LSHFT>
+                , <&kp i &kp R &kp S &kp T>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LSHFT>
+                , <&kp a &kp K &kp E &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp L>
+                , <&macro_release &kp LSHFT>
+                , <&kp a &kp S &kp T>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LSHFT>
+                , <&kp a &kp K &kp E &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp T>
+                , <&macro_release &kp LSHFT>
+                , <&kp e &kp S &kp T &kp 1 &kp 2 &kp 3 &kp EXCL &kp AT &kp HASH>
                 ;
-        }; 
-//keybinding is <&fake>
+        };
+        //keybinding is <&FakeEmail>
+        FakeEmail: FakeEmail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp F &kp A &kp K &kp E &kp F &kp I &kp R &kp S &kp T &kp DOT &kp F &kp A &kp K &kp E &kp L &kp A &kp S &kp T &kp AT &kp Y &kp A &kp H &kp O &kp O &kp DOT &kp C &kp O &kp M>
+                ;
+        };
+        //keybinding is <&Macro_Name_1>
+        Macro_Name_1: Macro_Name_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp T>
+                , <&macro_release &kp LSHFT>
+                , <&kp e &kp S &kp T &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp M>
+                , <&macro_release &kp LSHFT>
+                , <&kp a &kp C &kp R &kp O &kp SPACE &kp 1 &kp SPACE &kp O &kp R &kp SPACE &kp 2 &kp SPACE &kp FSLH &kp FSLH &kp SPACE &kp BSLH &kp BSLH &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT>
+                , <&kp e &kp E &kp M &kp S &kp SPACE &kp STAR &kp STAR &kp SPACE &kp O &kp P &kp E &kp R &kp A &kp B &kp L &kp E &kp DOT>
+                ;
+        };
+        
     };
     
     
@@ -170,7 +217,7 @@ Transparent Layer Template
 &kp TAB  &kp Q      &kp W   &kp F   &kp P   &kp B   &kp N7                                                                                       &mkp LCLK   &kp J      &kp L        &kp U              &kp Y           &kp SEMI    &kp BSLH
 &none    &kp A      &kp R   &kp S   &kp T   &kp G   &kp N8      &kp N3                 &kp LEFT_GUI            &kp LA(LC(DEL))   &mmv MOVE_UP           &kp PG_DN   &kp M      &kp N        &lt MOUSELAYER E   &lt NAVLAYER I  &kp O       &none
 &none    &kp Z      &kp X   &kp C   &kp D   &kp V                                      &kp N1                  &mmv MOVE_LEFT                                         &kp K      &kp H        &kp COMMA          &kp DOT         &kp FSLH    &none
-&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &none              &none           &none       &none
+&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &none              &Macro_Name_1           &FakeEmail       &Fake_Name
             >;
 
         };

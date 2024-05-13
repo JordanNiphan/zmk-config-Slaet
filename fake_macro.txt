@@ -1,1 +1,0 @@
-        fake: fake {            compatible = "zmk,behavior-macro";            #binding-cells = <0>;            bindings                = <&macro_tap &kp F &kp A &kp K &kp E &kp DOT &kp E &kp M &kp A &kp I &kp L &kp AT &kp Y &kp A &kp H &kp O &kp O &kp DOT &kp C &kp O &kp M>                ;        }; //keybinding is <&fake>

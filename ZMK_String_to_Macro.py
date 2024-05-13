@@ -1,13 +1,16 @@
+"""
+
+Python program to convert a single line string into ZMK macro format.
+
+Outputs a txt file: (MacroName)_macro.txt
+    Duplicate filenames are overwritten.
+
+"""
+
 def Macro(MacroName,Macro):
-    if MacroName == '':
-        print('MacroName cannot be blank')
-        exit()
-    if Macro == '':
-        print('Macro cannot be blank')
-        exit()
 
     string = Macro
-    macro = '        '+MacroName+': '+MacroName+' {\r            compatible = "zmk,behavior-macro";\r            #binding-cells = <0>;\r            bindings\r                = '
+    macro =  '        //keybinding is <&'+MacroName+'>\r        '+MacroName+': '+MacroName+' {\r            compatible = "zmk,behavior-macro";\r            #binding-cells = <0>;\r            bindings\r                = '
 
     previous_letter_capital = False
     firstrun = True
@@ -164,13 +167,96 @@ def Macro(MacroName,Macro):
                 previous_letter_capital = False
     if string[-1].isupper() == True:
         macro += '>\r                , <&macro_release &kp LSHFT'
-    macro += '>\r                ;\r        }; \r        //keybinding is <&'+MacroName+'>'
-
-        
+    macro += '>\r                ;\r        };'
+    
+    
     f = open(MacroName+"_macro.txt", "w")
     f.write(macro)
     f.close()
 
-M = input('Macroname :')
-N = input('Macro :')
-Macro(M,N)
+
+
+if __name__ == '__main__':
+
+    special_characters = "!@#$%^&*()-+?=,<>/\\\"\'"
+
+
+    work_counter = 0
+    annoy_counter = 0
+    
+    while True:
+        if work_counter == 0:
+            print('Ready to work.')
+            work_counter += 1
+        elif work_counter == 1:
+            print('Be happy to.')
+            work_counter += 1
+        elif work_counter == 2:
+            print('Work, work.')
+            work_counter += 1
+        elif work_counter == 3:
+            print('Okie dokie.')
+            work_counter += 1
+        elif work_counter == 4:
+            print('I can do that.')
+            work_counter = 0
+            
+        M = input('Macroname :')
+
+        if any(c in special_characters for c in M):
+            print('MacroName cannot contain special characters.')
+            if work_counter != 0:
+                work_counter -= 1
+            continue
+        if M == '':
+            print('MacroName cannot be blank')
+            if work_counter != 0:
+                work_counter -= 1
+            continue
+        if ' ' in M:
+            print("MacroName won't work with spaces")
+            NewM = ''
+            for i in M:
+                if i == ' ':
+                    NewM += '_'
+                else:
+                    NewM += i
+            M = NewM
+            print("Changing MacroName to: "+M)
+
+        N = input('Macro :')
+        if N == '':
+            print('Macro cannot be blank')
+            if work_counter != 0:
+                work_counter -= 1
+            continue
+
+        Macro(M,N)
+        another = input('Another? (Y/n):')
+        if another.upper() == 'Y':
+            pass
+        elif another.upper() == 'N':
+            print('OK!')
+            exit()
+        else:
+            while True:
+                if another.upper() == 'Y':
+                    break
+                elif another.upper() == 'N':
+                    print('FINE!')
+                    exit()
+                if annoy_counter == 0:
+                    another = input("Whaaat? ... input Y or N ... :")
+                    annoy_counter += 1
+                elif annoy_counter == 1:
+                    another = input("Me busy. Leave me alone!! ... input Y or N ... :")
+                    annoy_counter += 1
+                elif annoy_counter == 2:
+                    another = input("No time for play. ... input Y or N ... :")
+                    annoy_counter += 1
+                elif annoy_counter == 3:
+                    another = input("Me not that kind of orc! ... input Y or N ... :")
+                    annoy_counter += 1
+                elif annoy_counter == 4:
+                    print("Kill 'em! ...progam exit...")
+                    exit()
