@@ -65,7 +65,7 @@
   ╰────────────────────────────────────────┻───────────────────────────────────────╯
 
 */
-/ { 
+/ {
     macros {
         //keybinding is <&FakeLastTest_123>
         FakeLastTest_123: FakeLastTest_123 {
@@ -177,9 +177,7 @@
                 ;
             };
         };
-    };
-
-/ {      
+      
     combos {
         compatible = "zmk,combos";
         combo_default {
