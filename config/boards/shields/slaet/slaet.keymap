@@ -122,60 +122,6 @@
                 , <&macro_tap &kp A &kp S &kp T &kp N &kp A &kp M &kp E>
                 ;
             };
-        //keybinding is <&Slaet_Test_Macro>
-        Slaet_Test_Macro: Slaet_Test_Macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp E &kp S &kp T &kp I &kp N &kp G &kp 1 &kp 2 &kp 3 &kp 4 &kp 5 &kp 6 &kp 7 &kp 8 &kp 9 &kp SPACE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp SPACE>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T &kp E &kp S &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp BSLH &kp BSLH &kp BSLH &kp SPACE>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T &kp E &kp S &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp EXCL &kp EXCL &kp EXCL>
-                ;
-            };
-        //keybinding is <&Test1>
-        Test1: Test1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp E &kp S &kp T &kp 1>
-                ;
-            };
-        //keybinding is <&Test2>
-        Test2: Test2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp 1 &kp 2 &kp 3 &kp 4 &kp 5 &kp 6 &kp 7 &kp 8 &kp 9 &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp BSLH>
-                ;
-            };
-        //keybinding is <&Test5>
-        Test5: Test5 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp N &kp O>
-                ;
-            };
-        //keybinding is <&test6>
-        test6: test6 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp E>
-                ;
-            };
         };
       
     combos {
@@ -269,7 +215,7 @@ Transparent Layer Template
 &kp TAB  &kp Q      &kp W   &kp F   &kp P   &kp B   &kp N7                                                                                       &mkp LCLK   &kp J      &kp L        &kp U              &kp Y           &kp SEMI    &kp BSLH
 &none    &kp A      &kp R   &kp S   &kp T   &kp G   &kp N8      &kp N3                 &kp LEFT_GUI            &kp LA(LC(DEL))   &mmv MOVE_UP           &kp PG_DN   &kp M      &kp N        &lt MOUSELAYER E   &lt NAVLAYER I  &kp O       &none
 &none    &kp Z      &kp X   &kp C   &kp D   &kp V                                      &kp N1                  &mmv MOVE_LEFT                                         &kp K      &kp H        &kp COMMA          &kp DOT         &kp FSLH    &none
-&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &none              &Test2           &FakeName_01       &FakeLastTest_123
+&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &none              &none           &FakeName_01       &FakeLastTest_123
             >;
 
         };
