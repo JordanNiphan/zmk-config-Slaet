@@ -1,0 +1,1 @@
+        //keybinding is <&no>        no: no {            compatible = "zmk,behavior-macro";            #binding-cells = <0>;            bindings                = <&macro_tap &kp N &kp O>                ;            };

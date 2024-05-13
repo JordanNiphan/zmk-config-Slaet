@@ -1,5 +1,3 @@
-/ { 
-    macros {
         //keybinding is <&FakeLastTest_123>
         FakeLastTest_123: FakeLastTest_123 {
             compatible = "zmk,behavior-macro";
@@ -53,6 +51,22 @@
                 , <&macro_tap &kp L>
                 , <&macro_release &kp LSHFT>
                 , <&macro_tap &kp A &kp S &kp T &kp N &kp A &kp M &kp E>
+                ;
+            };
+        //keybinding is <&no>
+        no: no {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp N &kp O>
+                ;
+            };
+        //keybinding is <&Ok>
+        Ok: Ok {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp O &kp K>
                 ;
             };
         //keybinding is <&Slaet_Test_Macro>
@@ -109,5 +123,3 @@
                 = <&macro_tap &kp E>
                 ;
             };
-        };
-    };
