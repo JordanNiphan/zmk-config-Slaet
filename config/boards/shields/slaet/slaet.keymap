@@ -12,8 +12,8 @@
 #define QWERTY       4
 / { 
     macros {
-        //keybinding is <&Slaet_Test_macro>
-        Slaet_Test_macro: Slaet_Test_macro {
+        //keybinding is <&Slaet_Test_Macro>
+        Slaet_Test_Macro: Slaet_Test_Macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
