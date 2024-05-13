@@ -12,10 +12,6 @@ def Macro(MacroName,Macro):
     previous_letter_capital = False
     firstrun = True
 
-    if string[0].isupper() is True:
-        pass
-    else:  
-        macro += '<'
     for i in string:
         if previous_letter_capital is True:
             if i.isupper():
@@ -89,7 +85,16 @@ def Macro(MacroName,Macro):
                 elif i == '~':
                     macro += 'TILDE'
         else:
-            if i == ' ':
+            if firstrun == True:
+                if i.isupper():
+                    macro += '<&macro_press &kp LSHFT> '+ '\r                , <&macro_tap &kp '+i
+                    previous_letter_capital = True
+                    firstrun = False
+                else:
+                    macro += '<&macro_tap &kp '+i
+                    previous_letter_capital = False
+                    firstrun = False
+            elif i == ' ':
                 macro += ' &kp SPACE'
             elif i == '!':
                 macro += ' &kp EXCL'
@@ -151,15 +156,6 @@ def Macro(MacroName,Macro):
                 macro += ' &kp GRAVE'
             elif i == '~':
                 macro += ' &kp TILDE'
-            elif firstrun == True:
-                if i.isupper():
-                    macro += '<&macro_press &kp LSHFT> '+ '\r                , <&macro_tap &kp '+i
-                    previous_letter_capital = True
-                    firstrun = False
-                else:
-                    macro += ' &kp '+i
-                    previous_letter_capital = False
-                    firstrun = False
             elif i.isupper() == True:
                 macro += '>\r                , <&macro_press &kp LSHFT> '+'\r                , <&macro_tap &kp '+i
                 previous_letter_capital = True

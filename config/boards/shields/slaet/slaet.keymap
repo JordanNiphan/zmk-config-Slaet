@@ -74,7 +74,7 @@
             bindings
                 = <&macro_tap &kp j &kp o &kp r &kp d &kp a &kp n &kp DOT &kp n &kp i &kp p &kp h &kp a &kp n &kp p &kp r &kp a &kp s &kp a &kp r &kp t &kp AT &kp n &kp e &kp t &kp l &kp DOT &kp d &kp o &kp e &kp DOT &kp g &kp o &kp v>
                 ;
-        }; #keybinding is <&email>    
+        };   
     };
     
     
