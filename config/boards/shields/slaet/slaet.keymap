@@ -65,65 +65,7 @@
   ╰────────────────────────────────────────┻───────────────────────────────────────╯
 
 */
-/ {
-    macros {
-        //keybinding is <&FakeLastTest_123>
-        FakeLastTest_123: FakeLastTest_123 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp 1 &kp 2>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp E &kp S &kp T &kp I &kp N &kp G &kp 3 &kp 4>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp A &kp L &kp L>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp T &kp H &kp E>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp D &kp E &kp V &kp I &kp C &kp E &kp S>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp  &kp 1 &kp 1 &kp EXCL &kp EXCL &kp EXCL>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp D>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp EXCL>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp A>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp AT>
-                ;
-            };
-        //keybinding is <&FakeName_01>
-        FakeName_01: FakeName_01 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp E &kp S &kp T &kp I &kp N &kp G>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp F>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp A &kp K &kp E>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp N>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp A &kp M &kp E &kp 1 &kp SPACE &kp EXCL &kp EXCL &kp EXCL &kp SPACE>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp F>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp A &kp K &kp E>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp L>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp A &kp S &kp T &kp N &kp A &kp M &kp E>
-                ;
-            };
-        };
-      
+/ {   
     combos {
         compatible = "zmk,combos";
         combo_default {
@@ -215,7 +157,7 @@ Transparent Layer Template
 &kp TAB  &kp Q      &kp W   &kp F   &kp P   &kp B   &kp N7                                                                                       &mkp LCLK   &kp J      &kp L        &kp U              &kp Y           &kp SEMI    &kp BSLH
 &none    &kp A      &kp R   &kp S   &kp T   &kp G   &kp N8      &kp N3                 &kp LEFT_GUI            &kp LA(LC(DEL))   &mmv MOVE_UP           &kp PG_DN   &kp M      &kp N        &lt MOUSELAYER E   &lt NAVLAYER I  &kp O       &none
 &none    &kp Z      &kp X   &kp C   &kp D   &kp V                                      &kp N1                  &mmv MOVE_LEFT                                         &kp K      &kp H        &kp COMMA          &kp DOT         &kp FSLH    &none
-&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &none              &none           &FakeName_01       &FakeLastTest_123
+&none    &none      &none   &none   &none           &kp LCTRL   &lt NUMLAYER SPACE     &sk LSHIFT              &none             &mmv MOVE_DOWN  &mmv MOVE_RIGHT             &kp LALT     &none              &none           &none       &none
             >;
 
         };
