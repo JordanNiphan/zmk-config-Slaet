@@ -237,8 +237,8 @@ def StringToMacro():
         elif work_counter == 4:
             print('I can do that.')
             work_counter = 0
-            
-        M = input('Macroname :')
+        print('Macro name will be converted to lower case')            
+        M = input('Macroname: ')
 
         if any(c in special_characters for c in M):
             print('MacroName cannot contain special characters.')
@@ -258,7 +258,7 @@ def StringToMacro():
                     NewM += '_'
                 else:
                     NewM += i
-            M = NewM
+            M = NewM.lower()
             print("Changing MacroName to: "+M)
 
         N = input('Macro :')

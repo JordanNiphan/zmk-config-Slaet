@@ -17,21 +17,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
+                = <&macro_tap &kp O &kp O &kp C &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp P>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp E &kp S &kp T &kp I &kp N &kp G &kp SPACE &kp N1 &kp N2 &kp N3 &kp N4 &kp SPACE &kp DLLR &kp HASH &kp AT &kp AMPS>
+                , <&macro_tap &kp L &kp E &kp A &kp S &kp E &kp SPACE &kp D &kp O &kp N &kp SQT &kp T &kp SPACE &kp L &kp I &kp K &kp E &kp SPACE &kp M &kp Y &kp SPACE &kp T &kp O &kp E &kp S &kp EXCL>
                 ;
             };
-        //keybinding is <&slaet_macro_2>
-        slaet_macro_2: slaet_macro_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp S &kp L &kp A &kp E &kp T &kp DOT &kp F &kp A &kp K &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>
-                ;
-            };
-
         };
     combos {
         compatible = "zmk,combos";

@@ -1,0 +1,12 @@
+        //keybinding is <&slaet_macro_1>
+        slaet_macro_1: slaet_macro_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp O &kp O &kp C &kp SPACE>
+                , <&macro_press &kp LSHFT> 
+                , <&macro_tap &kp P>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp L &kp E &kp A &kp S &kp E &kp SPACE &kp D &kp O &kp N &kp SQT &kp T &kp SPACE &kp L &kp I &kp K &kp E &kp SPACE &kp M &kp Y &kp SPACE &kp T &kp O &kp E &kp S &kp EXCL>
+                ;
+            };
