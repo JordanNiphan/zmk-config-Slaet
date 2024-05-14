@@ -12,7 +12,7 @@
 #define QWERTY       4
 / { 
     macros {
-                //keybinding is <&slaet_macro_1>
+        //keybinding is <&slaet_macro_1>
         slaet_macro_1: slaet_macro_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,7 +30,6 @@
             bindings
                 = <&macro_tap &kp S &kp L &kp A &kp E &kp T &kp DOT &kp F &kp A &kp K &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>
                 ;
-            };
             };
 
         };
