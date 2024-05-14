@@ -2,7 +2,7 @@
 
 Python program to convert a single line string into ZMK macro format.
 
-MacroName is converted to lowercas as... keymap is case sensitive #rip
+MacroName is converted to lowercase as... keymap is case sensitive #rip
 
 Outputs a txt file: (MacroName)_macro.txt
     Duplicate filenames are overwritten.
