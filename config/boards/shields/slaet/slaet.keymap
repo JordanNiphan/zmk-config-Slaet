@@ -25,7 +25,7 @@
                 , <&macro_press &kp LSHFT> 
                 , <&macro_tap &kp S>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp C &kp R &kp I &kp P &kp T &kp S &kp BSLH &kp ENT>
+                , <&macro_tap &kp C &kp R &kp I &kp P &kp T &kp S &kp BSLH &kp ENTER>
                 ;
             };
         };
