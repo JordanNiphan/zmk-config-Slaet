@@ -12,47 +12,25 @@
 #define QWERTY       4
 / { 
     macros {
-        //keybinding is <&last_test>
-        last_test: last_test {
+                //keybinding is <&slaet_macro_1>
+        slaet_macro_1: slaet_macro_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT> 
                 , <&macro_tap &kp T>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp E &kp S &kp T &kp SPACE>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp L>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp A &kp S &kp T &kp SPACE &kp N1 &kp N2 &kp N3>
+                , <&macro_tap &kp E &kp S &kp T &kp I &kp N &kp G &kp SPACE &kp N1 &kp N2 &kp N3 &kp N4 &kp SPACE &kp DLLR &kp HASH &kp AT &kp AMPS>
                 ;
             };
-        //keybinding is <&slaet_test_macro>
-        slaet_test_macro: slaet_test_macro {
+        //keybinding is <&slaet_macro_2>
+        slaet_macro_2: slaet_macro_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp H &kp I &kp N &kp G &kp S &kp SPACE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp SPACE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp SPACE &kp SPACE &kp SPACE &kp EXCL &kp EXCL &kp EXCL &kp EXCL &kp SPACE &kp SPACE &kp SPACE &kp HASH &kp DLLR &kp LPAR &kp RPAR>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp A &kp R &kp S &kp T>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp SPACE &kp N4 &kp N5 &kp PLUS &kp SPACE &kp COMMA &kp COMMA &kp COMMA &kp COMMA &kp SPACE &kp HASH &kp HASH &kp HASH &kp HASH &kp SPACE &kp A &kp A &kp HASH &kp HASH &kp SPACE &kp SPACE>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp A &kp A>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp HASH &kp HASH>
+                = <&macro_tap &kp S &kp L &kp A &kp E &kp T &kp DOT &kp F &kp A &kp K &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>
                 ;
             };
-        //keybinding is <&test2>
-        test2: test2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp T &kp E &kp S &kp T &kp I &kp N &kp G &kp SPACE &kp A &kp L &kp L &kp SPACE &kp T &kp H &kp E &kp SPACE &kp T &kp H &kp I &kp N &kp G &kp S &kp DOT &kp C &kp O &kp M>
-                ;
             };
 
         };
