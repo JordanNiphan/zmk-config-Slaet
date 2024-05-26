@@ -1,0 +1,12 @@
+file_format: "1"
+id: slaet
+name: SlaetCorne
+type: shield
+url: 
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+siblings:
+  - SlaetCorne_left
+  - SlaetCorne_right
