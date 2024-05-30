@@ -12,3 +12,5 @@ if SHIELD_SLAET-CORNE_LEFT || SHIELD_SLAET-CORNE_RIGHT
 
 config ZMK_SPLIT
     default y
+
+endif
