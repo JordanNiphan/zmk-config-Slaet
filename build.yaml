@@ -1,9 +1,5 @@
 include:
   - board: nice_nano_v2
-    shield: slaet_left
-  - board: nice_nano_v2
-    shield: slaet_right
-  - board: nice_nano_v2
     shield: SlaetCorne_right
   - board: nice_nano_v2
     shield: SlaetCorne_left
