@@ -1,8 +1,8 @@
 # Copyright (c) 2020 Pete Johanson
 # SPDX-License-Identifier: MIT
 
-config SHIELD_SLAET_LEFT
-    def_bool $(shields_list_contains,slaet_left)
+config SHIELD_SLAET-CORNE_LEFT
+    def_bool $(shields_list_contains,SlaetCorne_left)
 
-config SHIELD_SLAET_RIGHT
-    def_bool $(shields_list_contains,slaet_right)
+config SHIELD_SLAET-CORNE_RIGHT
+    def_bool $(shields_list_contains,SlaetCorne_right)
